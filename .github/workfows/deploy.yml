@@ -1,0 +1,54 @@
+name: Deploy React Course Apps
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # ---------- INSTALL + BUILD 01 ----------
+      - name: Install 01
+        working-directory: ./01. Welcome
+        run: npm install
+
+      - name: Build 01
+        working-directory: ./01. Welcome
+        run: npm run build
+
+      # ---------- INSTALL + BUILD 05 ----------
+      - name: Install 05
+        working-directory: ./05. Working with components props and JSX
+        run: npm install
+
+      - name: Build 05
+        working-directory: ./05. Working with components props and JSX
+        run: npm run build
+
+      # ---------- PREPARE OUTPUT ----------
+      - name: Prepare deploy folder
+        run: |
+          rm -rf public-pages
+          mkdir -p public-pages/01
+          mkdir -p public-pages/05
+
+          cp -r "01. Welcome/build/." public-pages/01/
+          cp -r "05. Working with components props and JSX/build/." public-pages/05/
+
+      # ---------- DEPLOY ----------
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./public-pages
