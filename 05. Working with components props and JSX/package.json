@@ -1,7 +1,7 @@
 {
   "name": "03-01_pizza_menu",
   "version": "0.1.0",
-  "homepage": "/react-course/05",
+  "homepage": "/react-course/pizza-menu",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.0",

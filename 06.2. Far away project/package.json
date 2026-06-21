@@ -1,5 +1,6 @@
 {
   "name": "far-away",
+  "homepage": "/react-course/far-away",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

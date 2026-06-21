@@ -1,5 +1,6 @@
 {
   "name": "steps-component",
+  "homepage": "/react-course/steps-component",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
