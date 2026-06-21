@@ -1,5 +1,6 @@
 {
   "name": "challenge-03",
+  "homepage": "/react-course/cards",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

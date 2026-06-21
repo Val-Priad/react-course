@@ -1,5 +1,6 @@
 {
   "name": "challenge-05",
+  "homepage": "/react-course/tip-calculator",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

@@ -53,6 +53,196 @@ jobs:
         working-directory: ./06.2. Far away project
         run: npm run build
 
+      # ---------- INSTALL + BUILD  07.1 ----------
+      - name: Install 07.1 
+        working-directory: ./07.1. Accordion component
+        run: npm install
+
+      - name: Build 07.1 
+        working-directory: ./07.1. Accordion component
+        run: npm run build
+
+      # ---------- INSTALL + BUILD  07.2 ----------
+      - name: Install 07.2 
+        working-directory: ./07.2. Steps component with children property
+        run: npm install
+
+      - name: Build 07.2 
+        working-directory: ./07.2. Steps component with children property
+        run: npm run build
+
+      # ---------- INSTALL + BUILD  07.3 ----------
+      - name: Install 07.3 
+        working-directory: ./07.3. Accordion component but only one faq can be open
+        run: npm install
+
+      - name: Build 07.3 
+        working-directory: ./07.3. Accordion component but only one faq can be open
+        run: npm run build
+
+      # ---------- INSTALL + BUILD  08 ----------
+      - name: Install 08 
+        working-directory: ./08. Eat and split
+        run: npm install
+
+      - name: Build 08 
+        working-directory: ./08. Eat and split
+        run: npm run build
+
+      # ---------- INSTALL + BUILD  10 ----------
+      - name: Install 10 
+        working-directory: ./10. UsePopcorn project
+        run: npm install
+
+      - name: Build 10 
+        working-directory: ./10. UsePopcorn project
+        run: npm run build
+
+
+      # ---------- INSTALL + BUILD  16 ----------
+      - name: Install 16 
+        working-directory: ./16. React quiz
+        run: npm install
+
+      - name: Build 16 
+        working-directory: ./16. React quiz
+        run: npm run build
+
+      # ---------- INSTALL + BUILD  17 ----------
+      - name: Install 17 
+        working-directory: ./17. WorldWise
+        run: npm install
+
+      - name: Build 17 
+        working-directory: ./17. WorldWise
+        run: npm run build
+
+      # ---------- INSTALL + BUILD  18 ----------
+      - name: Install 18 
+        working-directory: ./18. Atomic blog
+        run: npm install
+
+      - name: Build 18 
+        working-directory: ./18. Atomic blog
+        run: npm run build
+
+      # ---------- INSTALL + BUILD  19 ----------
+      - name: Install 19 
+        working-directory: ./19. Workout timer
+        run: npm install
+
+      - name: Build 19 
+        working-directory: ./19. Workout timer
+        run: npm run build
+
+      # ---------- INSTALL + BUILD  20 ----------
+      - name: Install 20 
+        working-directory: ./20. Redux and Modern Redux Toolkit
+        run: npm install
+
+      - name: Build 20 
+        working-directory: ./20. Redux and Modern Redux Toolkit
+        run: npm run build
+
+      # ---------- INSTALL + BUILD  21 ----------
+      - name: Install 21 
+        working-directory: ./21. Fast React Pizza
+        run: npm install
+
+      - name: Build 21 
+        working-directory: ./21. Fast React Pizza
+        run: npm run build
+
+      # ---------- INSTALL + BUILD  challenge-01 ----------
+      - name: Install challenge-01 
+        working-directory: ./challenge-01
+        run: npm install
+
+      - name: Build challenge-01 
+        working-directory: ./challenge-01
+        run: npm run build
+
+      # ---------- INSTALL + BUILD  challenge-02 ----------
+      - name: Install challenge-02 
+        working-directory: ./challenge-02
+        run: npm install
+
+      - name: Build challenge-02 
+        working-directory: ./challenge-02
+        run: npm run build
+
+      # ---------- INSTALL + BUILD  challenge-03 ----------
+      - name: Install challenge-03 
+        working-directory: ./challenge-03
+        run: npm install
+
+      - name: Build challenge-03 
+        working-directory: ./challenge-03
+        run: npm run build
+
+      # ---------- INSTALL + BUILD  challenge-04 ----------
+      - name: Install challenge-04 
+        working-directory: ./challenge-04
+        run: npm install
+
+      - name: Build challenge-04 
+        working-directory: ./challenge-04
+        run: npm run build
+
+      # ---------- INSTALL + BUILD  challenge-05 ----------
+      - name: Install challenge-05 
+        working-directory: ./challenge-05
+        run: npm install
+
+      - name: Build challenge-05 
+        working-directory: ./challenge-05
+        run: npm run build
+
+      # ---------- INSTALL + BUILD  challenge-06 ----------
+      - name: Install challenge-06 
+        working-directory: ./challenge-06
+        run: npm install
+
+      - name: Build challenge-06 
+        working-directory: ./challenge-06
+        run: npm run build
+
+      # ---------- INSTALL + BUILD  challenge-07 ----------
+      - name: Install challenge-07 
+        working-directory: ./challenge-07
+        run: npm install
+
+      - name: Build challenge-07 
+        working-directory: ./challenge-07
+        run: npm run build
+
+      # ---------- INSTALL + BUILD  challenge-08 ----------
+      - name: Install challenge-08 
+        working-directory: ./challenge-08
+        run: npm install
+
+      - name: Build challenge-08 
+        working-directory: ./challenge-08
+        run: npm run build
+
+      # ---------- INSTALL + BUILD  challenge-09 ----------
+      - name: Install challenge-09 
+        working-directory: ./challenge-09
+        run: npm install
+
+      - name: Build challenge-09 
+        working-directory: ./challenge-09
+        run: npm run build
+
+      # ---------- INSTALL + BUILD  challenge-10----------
+      - name: Install challenge-10
+        working-directory: ./challenge-10
+        run: npm install
+
+      - name: Build challenge-10
+        working-directory: ./challenge-10
+        run: npm run build
+
       # ---------- PREPARE OUTPUT ----------
       - name: Prepare deploy folder
         run: |
@@ -61,11 +251,55 @@ jobs:
           mkdir -p public-pages/pizza-menu
           mkdir -p public-pages/steps-component
           mkdir -p public-pages/far-away
+          mkdir -p public-pages/accordion-component
+          mkdir -p public-pages/steps-component-with-children-prop
+          mkdir -p public-pages/accordion-component-one-can-be-opened
+          mkdir -p public-pages/eat-and-split
+          mkdir -p public-pages/use-popcorn
+          mkdir -p public-pages/react-quiz
+          mkdir -p public-pages/world-wise
+          mkdir -p public-pages/atomic-blog
+          mkdir -p public-pages/workout-timer
+          mkdir -p public-pages/banking
+          mkdir -p public-pages/fast-react-pizza
+          mkdir -p public-pages/engineer-personality-card
+          mkdir -p public-pages/days-from-now-calculator
+          mkdir -p public-pages/cards
+          mkdir -p public-pages/modified-days-from-now-calculator
+          mkdir -p public-pages/tip-calculator
+          mkdir -p public-pages/text-expander
+          mkdir -p public-pages/currency-converter
+          mkdir -p public-pages/my-position
+          mkdir -p public-pages/bank-account
+          mkdir -p public-pages/use-context-react-quiz
 
           cp -r "01. Welcome/build/." public-pages/wise-tips/
           cp -r "05. Working with components props and JSX/build/." public-pages/pizza-menu/
           cp -r "06.1. Steps component/build/." public-pages/steps-component/
           cp -r "06.2. Far away project/build/." public-pages/far-away/
+          cp -r "07.1. Accordion component/build/." public-pages/accordion-component/
+          cp -r "07.2. Steps component with children property/build/." public-pages/steps-component-with-children-prop/
+          cp -r "07.3. Accordion component but only one faq can be open/build/." public-pages/accordion-component-one-can-be-opened/
+          cp -r "08. Eat and split/build/." public-pages/eat-and-split/
+          cp -r "10. UsePopcorn project/build/." public-pages/use-popcorn/
+          cp -r "16. React quiz/build/." public-pages/react-quiz/
+          cp -r "17. WorldWise/dist/." public-pages/world-wise/
+          cp -r "18. Atomic blog/build/." public-pages/atomic-blog/
+          cp -r "19. Workout timer/build/." public-pages/workout-timer/
+          cp -r "20. Redux and Modern Redux Toolkit/build/." public-pages/banking/
+          cp -r "21. Fast React Pizza/dist/." public-pages/fast-react-pizza/
+          cp -r "challenge-01/build/." public-pages/engineer-personality-card/
+          cp -r "challenge-02/build/." public-pages/days-from-now-calculator/
+          cp -r "challenge-03/build/." public-pages/cards/
+          cp -r "challenge-04/build/." public-pages/modified-days-from-now-calculator/
+          cp -r "challenge-05/build/." public-pages/tip-calculator/
+          cp -r "challenge-06/build/." public-pages/text-expander/
+          cp -r "challenge-07/build/." public-pages/currency-converter/
+          cp -r "challenge-08/build/." public-pages/my-position/
+          cp -r "challenge-09/build/." public-pages/bank-account/
+          cp -r "challenge-10/build/." public-pages/use-context-react-quiz/
+
+
 
       # ---------- DEPLOY ----------
       - name: Deploy to GitHub Pages

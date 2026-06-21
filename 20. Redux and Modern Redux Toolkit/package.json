@@ -1,5 +1,6 @@
 {
   "name": "redux-and-modern-redux-toolkit",
+  "homepage": "/react-course/banking",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

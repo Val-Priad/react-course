@@ -1,5 +1,6 @@
 {
   "name": "challenge-04",
+  "homepage": "/react-course/modified-days-from-now-calculator",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
