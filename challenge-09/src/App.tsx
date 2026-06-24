@@ -1,5 +1,4 @@
 import { useReducer } from "react";
-import "./styles.css";
 
 type TAccount = {
   balance: number;
@@ -32,6 +31,7 @@ function reducer(state: TState, action: TAction): TState {
           balance: 500,
         },
       };
+
     case "deposit":
       return {
         ...state,
@@ -40,11 +40,13 @@ function reducer(state: TState, action: TAction): TState {
           balance: state.account.balance + 150,
         },
       };
+
     case "withdraw":
       if (state.account.balance - 50 < 0) {
         alert("Can't withdraw money");
         return state;
       }
+
       return {
         ...state,
         account: {
@@ -52,11 +54,13 @@ function reducer(state: TState, action: TAction): TState {
           balance: state.account.balance - 50,
         },
       };
+
     case "requestLoan":
       if (state.account.loan > 0) {
         alert("Can't request another loan while current is active");
         return state;
       }
+
       return {
         ...state,
         account: {
@@ -65,15 +69,18 @@ function reducer(state: TState, action: TAction): TState {
           loan: state.account.loan + 5000,
         },
       };
+
     case "payLoan":
       if (state.account.loan === 0) {
         alert("You don't have a loan");
         return state;
       }
+
       if (state.account.loan > state.account.balance) {
         alert("No money to pay off the loan");
         return state;
       }
+
       return {
         ...state,
         account: {
@@ -82,104 +89,117 @@ function reducer(state: TState, action: TAction): TState {
           loan: 0,
         },
       };
+
     case "closeAccount":
       return INITIAL_STATE;
+
     default:
       return state;
   }
 }
+
 function App() {
   const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
-  const accountIsClosed = state.status === "accountIsClosed" ? true : false;
+  const accountIsClosed = state.status === "accountIsClosed";
+
+  const buttonBase =
+    "w-full rounded-xl px-5 py-3 font-semibold transition disabled:cursor-not-allowed disabled:bg-slate-200 disabled:text-slate-400 disabled:shadow-none";
+
   return (
-    <div className="App">
-      <h1>useReducer Bank Account</h1>
-      <p>Balance: {state.account.balance}</p>
-      <p>Loan: {state.account.loan}</p>
+    <main className="p-3 rounded-xl bg-slate-950 px-4 py-10 text-slate-100">
+      <section className="mx-auto max-w-md rounded-3xl border border-slate-800 bg-slate-900/80 p-6 shadow-2xl shadow-black/30">
+        <div className="mb-8 text-center">
+          <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-emerald-500/10 text-3xl">
+            🏦
+          </div>
 
-      <p>
-        <button
-          onClick={() => {
-            dispatch({ type: "openAccount" });
-          }}
-          disabled={!accountIsClosed}
-        >
-          Open account
-        </button>
-      </p>
+          <h1 className="text-3xl font-bold tracking-tight">
+            useReducer Bank Account
+          </h1>
 
-      <p>
-        <button
-          onClick={() => {
-            dispatch({ type: "deposit" });
-          }}
-          disabled={accountIsClosed}
-        >
-          Deposit 150
-        </button>
-      </p>
+          <p className="mt-2 text-sm text-slate-400">
+            Manage your balance, loan and account status
+          </p>
+        </div>
 
-      <p>
-        <button
-          onClick={() => {
-            dispatch({ type: "withdraw" });
-          }}
-          disabled={accountIsClosed}
-        >
-          Withdraw 50
-        </button>
-      </p>
+        <div className="mb-6 grid grid-cols-2 gap-4">
+          <div className="rounded-2xl bg-slate-800 p-4">
+            <p className="text-sm text-slate-400">Balance</p>
+            <p className="mt-1 text-2xl font-bold text-emerald-400">
+              ${state.account.balance}
+            </p>
+          </div>
 
-      <p>
-        <button
-          onClick={() => {
-            dispatch({ type: "requestLoan" });
-          }}
-          disabled={accountIsClosed}
-        >
-          Request a loan of 5000
-        </button>
-      </p>
+          <div className="rounded-2xl bg-slate-800 p-4">
+            <p className="text-sm text-slate-400">Loan</p>
+            <p className="mt-1 text-2xl font-bold text-amber-400">
+              ${state.account.loan}
+            </p>
+          </div>
+        </div>
 
-      <p>
-        <button
-          onClick={() => {
-            dispatch({ type: "payLoan" });
-          }}
-          disabled={accountIsClosed}
+        <div
+          className={`mb-6 rounded-2xl px-4 py-3 text-center text-sm font-medium ${
+            accountIsClosed
+              ? "bg-rose-500/10 text-rose-300"
+              : "bg-emerald-500/10 text-emerald-300"
+          }`}
         >
-          Pay loan
-        </button>
-      </p>
+          {accountIsClosed ? "Account is closed" : "Account is open"}
+        </div>
 
-      <p>
-        <button
-          onClick={() => {
-            dispatch({ type: "closeAccount" });
-          }}
-          disabled={accountIsClosed}
-        >
-          Close account
-        </button>
-      </p>
-    </div>
+        <div className="space-y-3">
+          <button
+            onClick={() => dispatch({ type: "openAccount" })}
+            disabled={!accountIsClosed}
+            className={`${buttonBase} bg-emerald-500 text-slate-950 shadow-lg shadow-emerald-500/20 hover:bg-emerald-400`}
+          >
+            Open account
+          </button>
+
+          <button
+            onClick={() => dispatch({ type: "deposit" })}
+            disabled={accountIsClosed}
+            className={`${buttonBase} bg-sky-500 text-white shadow-lg shadow-sky-500/20 hover:bg-sky-400`}
+          >
+            Deposit 150
+          </button>
+
+          <button
+            onClick={() => dispatch({ type: "withdraw" })}
+            disabled={accountIsClosed}
+            className={`${buttonBase} bg-indigo-500 text-white shadow-lg shadow-indigo-500/20 hover:bg-indigo-400`}
+          >
+            Withdraw 50
+          </button>
+
+          <button
+            onClick={() => dispatch({ type: "requestLoan" })}
+            disabled={accountIsClosed}
+            className={`${buttonBase} bg-amber-500 text-slate-950 shadow-lg shadow-amber-500/20 hover:bg-amber-400`}
+          >
+            Request a loan of 5000
+          </button>
+
+          <button
+            onClick={() => dispatch({ type: "payLoan" })}
+            disabled={accountIsClosed}
+            className={`${buttonBase} bg-purple-500 text-white shadow-lg shadow-purple-500/20 hover:bg-purple-400`}
+          >
+            Pay loan
+          </button>
+
+          <button
+            onClick={() => dispatch({ type: "closeAccount" })}
+            disabled={accountIsClosed}
+            className={`${buttonBase} bg-rose-500 text-white shadow-lg shadow-rose-500/20 hover:bg-rose-400`}
+          >
+            Close account
+          </button>
+        </div>
+      </section>
+    </main>
   );
 }
 
 export default App;
-
-/*
-1. Let's implement a simple bank account! It's similar to the example that I used as an analogy to explain how useReducer works, but it's simplified (we're not using account numbers here)
-
-2. Use a reducer to model the following state transitions: openAccount, deposit, withdraw, requestLoan, payLoan, closeAccount. Use the `initialState` below to get started.
-
-3. All operations (expect for opening account) can only be performed if isActive is true. If it's not, just return the original state object. You can check this right at the beginning of the reducer
-
-4. When the account is opened, isActive is set to true. There is also a minimum deposit amount of 500 to open an account (which means that the balance will start at 500)
-
-5. Customer can only request a loan if there is no loan yet. If that condition is met, the requested amount will be registered in the 'loan' state, and it will be added to the balance. If the condition is not met, just return the current state
-
-6. When the customer pays the loan, the opposite happens: the money is taken from the balance, and the 'loan' will get back to 0. This can lead to negative balances, but that's no problem, because the customer can't close their account now (see next point)
-
-7. Customer can only close an account if there is no loan, AND if the balance is zero. If this condition is not met, just return the state. If the condition is met, the account is deactivated and all money is withdrawn. The account basically gets back to the initial state
-*/
