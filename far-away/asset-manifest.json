@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-course/far-away/static/css/main.24b1ed81.css",
+    "main.js": "/react-course/far-away/static/js/main.04788495.js",
+    "index.html": "/react-course/far-away/index.html",
+    "main.24b1ed81.css.map": "/react-course/far-away/static/css/main.24b1ed81.css.map",
+    "main.04788495.js.map": "/react-course/far-away/static/js/main.04788495.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.24b1ed81.css",
+    "static/js/main.04788495.js"
+  ]
+}
