@@ -273,6 +273,8 @@ jobs:
           mkdir -p public-pages/bank-account
           mkdir -p public-pages/use-context-react-quiz
 
+          cp index.html public-pages/index.html
+
           cp -r "01. Welcome/build/." public-pages/wise-tips/
           cp -r "05. Working with components props and JSX/build/." public-pages/pizza-menu/
           cp -r "06.1. Steps component/build/." public-pages/steps-component/
