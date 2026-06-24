@@ -2,7 +2,7 @@ import { useState } from "react";
 
 function SlowComponent() {
   // If this is too slow on your maching, reduce the `length`
-  const words = Array.from({ length: 100_000 }, () => "WORD");
+  const words = Array.from({ length: 1_000 }, () => "WORD");
   return (
     <ul>
       {words.map((word, i) => (

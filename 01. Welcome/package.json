@@ -1,6 +1,6 @@
 {
   "name": "01-00_welcome",
-  "homepage": "/react-course/wise-tips",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

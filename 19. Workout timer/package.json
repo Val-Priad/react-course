@@ -1,6 +1,6 @@
 {
   "name": "workout-timer",
-  "homepage": "/react-course/workout-timer",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

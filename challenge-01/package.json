@@ -1,6 +1,6 @@
 {
   "name": "challenge-01",
-  "homepage": "/react-course/engineer-personality-card",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

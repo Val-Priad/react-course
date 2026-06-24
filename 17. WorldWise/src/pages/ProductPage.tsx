@@ -7,16 +7,17 @@ export default function ProductPage() {
       <NavigationBar />
       <section>
         <img
-          src="img-1.jpg"
-          alt="person with dog overlooking mountain with sunset"
+          src={`${import.meta.env.BASE_URL}logo.png`}
+          alt="WorldWise logo"
+          className={styles.logo}
         />
         <div>
           <h2>About WorldWise.</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo est
             dicta illum vero culpa cum quaerat architecto sapiente eius non
-            soluta, molestiae nihil laborum, placeat debitis, laboriosam at
-            fuga perspiciatis?
+            soluta, molestiae nihil laborum, placeat debitis, laboriosam at fuga
+            perspiciatis?
           </p>
           <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis

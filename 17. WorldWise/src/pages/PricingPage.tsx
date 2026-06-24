@@ -19,7 +19,10 @@ export default function PricingPage() {
             voluptatem iste.
           </p>
         </div>
-        <img src="img-2.jpg" alt="overview of a large city with skyscrapers" />
+        <img
+          src={`${import.meta.env.BASE_URL}img-2.jpg`}
+          alt="overview of a large city with skyscrapers"
+        />
       </section>
     </main>
   );

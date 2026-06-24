@@ -97,6 +97,8 @@ jobs:
       - name: Build 10 
         working-directory: ./10. UsePopcorn project
         run: npm run build
+        env:
+          CI: false
 
 
       # ---------- INSTALL + BUILD  16 ----------

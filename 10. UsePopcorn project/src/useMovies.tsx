@@ -48,7 +48,7 @@ export function useMovies(query: string, handleCloseMovie: () => void) {
         controller.abort();
       };
     },
-    [query, handleCloseMovie],
+    [query],
   );
   return [movies, isLoaded, error] as const;
 }

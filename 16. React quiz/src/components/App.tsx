@@ -218,7 +218,7 @@ function reducer(state: TState, action: TAction): TState {
     case "nextQuestion":
       return {
         ...state,
-        questionIdx: state.questionIdx++,
+        questionIdx: state.questionIdx + 1,
         answerIdx: null,
       };
     case "finishQuiz":
@@ -262,7 +262,7 @@ function App() {
   const questionsQty = questions.length;
   const maxPossiblePoints = questions.reduce(
     (acc, question) => acc + question.points,
-    0
+    0,
   );
 
   // useEffect(function () {

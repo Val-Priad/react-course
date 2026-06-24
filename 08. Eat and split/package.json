@@ -1,6 +1,6 @@
 {
   "name": "eat-n-split",
-  "homepage": "/react-course/eat-and-split",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

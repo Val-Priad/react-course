@@ -1,6 +1,6 @@
 {
   "name": "accordion-component",
-  "homepage": "/react-course/accordion-component-one-can-be-opened",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
